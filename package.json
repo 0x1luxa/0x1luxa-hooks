@@ -1,6 +1,6 @@
 {
   "name": "@0x1luxa/hooks",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A collection of hooks for React",
   "sideEffects": false,
   "main": "./dist/index.js",
