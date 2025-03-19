@@ -20,8 +20,7 @@
   },
   "scripts": {
     "patch-push": "npm version patch && git push --tags",
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "build": "tsup"
   },
   "keywords": [
     "hooks",
