@@ -2,13 +2,21 @@
   "name": "@0x1luxa/hooks",
   "version": "0.1.5",
   "description": "A collection of hooks for React",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/**"
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
   },
   "scripts": {
     "patch-push": "npm version patch && git push --tags",
@@ -31,6 +39,7 @@
     "bignumber.js": "^9.1.2",
     "dayjs": "^1.11.13",
     "react": "^19.0.0",
+    "tsup": "^8.4.0",
     "viem": "^2.23.12",
     "wagmi": "^2.14.15"
   }
