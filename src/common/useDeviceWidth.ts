@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
 function useDeviceWidth(
   breakpoints = () => ({ desktop: 1023, tablet: 768, mobile: 480 })
@@ -29,14 +29,14 @@ function useDeviceWidth(
     }
 
     updateDeviceWidth()
-    window.addEventListener('resize', updateDeviceWidth)
+    window.addEventListener("resize", updateDeviceWidth)
 
     return () => {
-      window.removeEventListener('resize', updateDeviceWidth)
+      window.removeEventListener("resize", updateDeviceWidth)
     }
   }, [breakpoints])
 
   return { isBelowDesktop, isTablet, isMobile }
 }
 
-export default useDeviceWidth
+export { useDeviceWidth }
