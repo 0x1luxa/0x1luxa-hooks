@@ -4,17 +4,21 @@ type CopiedValue = string | null
 
 type CopyFunction = (text: string) => Promise<boolean>
 
-export const useClipboard = () => {
+type UseClipboardProps = {
+  onSuccess?: () => void
+  onError?: () => void
+}
+
+export const useClipboard = (props: UseClipboardProps) => {
+  const { onSuccess, onError } = props
   const [copiedText, setCopiedText] = useState<CopiedValue>(null)
 
   const copy: CopyFunction = useCallback(async (text) => {
-    if (!navigator?.clipboard) {
-      console.warn("Clipboard not supported")
-      return false
-    }
-
     // Try to save to clipboard then save it in the state if worked
     try {
+      if (!navigator?.clipboard) {
+        throw new Error("Clipboard not supported")
+      }
       await navigator.clipboard.writeText(text)
       setCopiedText(text)
       return true
@@ -25,5 +29,11 @@ export const useClipboard = () => {
     }
   }, [])
 
-  return { copiedText, copy }
+  const handleCopy = (text: string) => {
+    copy(text)
+      .then(() => onSuccess?.())
+      .catch(() => onError?.())
+  }
+
+  return { copiedText, copy, handleCopy }
 }
