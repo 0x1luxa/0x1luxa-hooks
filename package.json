@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "publish": "npm run build && npm version patch && npm publish",
     "build": "tsc",
