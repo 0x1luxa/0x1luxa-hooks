@@ -247,5 +247,3 @@ This project is licensed under the MIT License.
 - hooks
 - react
 - web3
-
-This `README.md` now includes detailed examples for each hook, making it easier for users to understand how to use them in their projects. Let me know if you need further adjustments!
