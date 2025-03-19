@@ -2,9 +2,9 @@
   "name": "@0x1luxa/hooks",
   "version": "0.1.8",
   "description": "A collection of hooks for React",
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist/**"
   ],
@@ -13,9 +13,9 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/index.d.mts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.mjs"
     }
   },
   "scripts": {
