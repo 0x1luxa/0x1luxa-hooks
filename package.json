@@ -1,0 +1,32 @@
+{
+  "name": "@0x1luxa/hooks",
+  "version": "0.1.0",
+  "description": "A collection of hooks for React",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "publish": "npm run build && npm version patch && npm publish",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "hooks",
+    "react",
+    "web3"
+  ],
+  "author": "0x1luxa",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.1.2",
+    "dayjs": "^1.11.13",
+    "react": "^19.0.0",
+    "viem": "^2.23.12"
+  }
+}
