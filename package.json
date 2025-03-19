@@ -11,6 +11,7 @@
     "access": "public"
   },
   "scripts": {
+    "patch-push": "npm version patch && git push --tags",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
@@ -23,12 +24,14 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22",
+    "@types/react": "^19.0.11",
     "typescript": "^5"
   },
   "dependencies": {
     "bignumber.js": "^9.1.2",
     "dayjs": "^1.11.13",
     "react": "^19.0.0",
-    "viem": "^2.23.12"
+    "viem": "^2.23.12",
+    "wagmi": "^2.14.15"
   }
 }
